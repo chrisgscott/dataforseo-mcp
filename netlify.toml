@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = "public"
+
+[dev]
+  framework = "custom"
+  command = "npm run dev"
+  port = 8888
+  targetPort = 3000
+  publish = "public"
+  autoLaunch = true
+
+[[redirects]]
+  from = "/sse"
+  to = "/.netlify/functions/server"
+  status = 200
